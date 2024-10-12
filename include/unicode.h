@@ -29,9 +29,10 @@
 
 #include "common.h"
 
-ssize_t strulen(const u16 *, ssize_t);
+void replace_chars(u16 *input, char *remove, u16 with);
+size_t strulen(const u16 *, ssize_t);
 void struacat(u16 * input, const char * addition);
 void printu(u16 * input);
-u16 * strucat(u16 * destination, const u16 * source);
+size_t strucat(u16 * destination, const u16 * source);
 
 #endif

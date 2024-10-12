@@ -61,10 +61,12 @@ Result archive_result;
 Result badge_archive_result;
 u32 old_time_limit;
 
-const char * main_paths[MODE_AMOUNT] = {
+const char * main_paths[REMOTE_MODE_AMOUNT] = {
     "/Themes/",
     "/Splashes/",
+    "/Badges/"
 };
+
 const int entries_per_screen_v[MODE_AMOUNT] = {
     4,
     4,
@@ -88,6 +90,7 @@ static void init_services(void)
     APT_GetAppCpuTimeLimit(&old_time_limit);
     APT_SetAppCpuTimeLimit(30);
     httpcInit(0);
+    init_sd();
     archive_result = open_archives();
     badge_archive_result = open_badge_extdata();
     if(envIsHomebrew())
@@ -534,7 +537,7 @@ int main(void)
             {
                 enable_qr:
                 draw_base_interface();
-                draw_text_center(GFX_TOP, 100, 0.5f, 0.6f, 0.6f, colors[COLOR_WHITE], language.main.loading_qr);
+                draw_text_center(GFX_TOP, 100, 0.5f, 0.6f, 0.6f, colors[COLOR_WHITE_BACKGROUND], language.main.loading_qr);
                 end_frame();
                 if(R_SUCCEEDED(camInit()))
                 {

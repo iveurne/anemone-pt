@@ -29,8 +29,9 @@
 
 #include "common.h"
 #include "badges.h"
+#include "config.h"
 
-#define ILLEGAL_CHARS "><\"?;:/\\+,.|[=]*"
+#define ILLEGAL_CHARS "><\"?;:/\\+,.|[=]*\n\r"
 
 extern FS_Archive ArchiveSD;
 extern FS_Archive ArchiveHomeExt;
@@ -54,6 +55,7 @@ typedef struct {
     u32 coppa : 1;
 } Parental_Restrictions_s;
 
+Result init_sd(void);
 Result open_archives(void);
 Result open_badge_extdata(void);
 Result close_archives(void);

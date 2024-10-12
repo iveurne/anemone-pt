@@ -28,16 +28,19 @@
 #define COLORS_H
 
 #include "common.h"
+#include "config.h"
 
 typedef u32 Color;
 
 typedef enum {
     COLOR_BACKGROUND, //silver-y black
     COLOR_ACCENT,
-    COLOR_WHITE,
+    COLOR_WHITE_BACKGROUND,
+    COLOR_WHITE_ACCENT,
     COLOR_CURSOR,
     COLOR_BLACK,
-    COLOR_RED,
+    COLOR_RED_BACKGROUND,
+    COLOR_RED_ACCENT,
     COLOR_YELLOW,
 
     COLOR_AMOUNT,
